@@ -1,0 +1,18 @@
+<input type="text" (keyup)= "eventCatcherOne(inputOne)"#inputOne >
+<hr>
+<input type="text" (keyup)= "eventCatcherTwo($event)">
+<hr>
+<input type="text" (keyup.enter)= "eventCatcherThree($event)">
+<hr>
+<button (click)= "btnClicked()">Click Me</button>
+<hr>
+<!-- 
+CHANGE DETECTION -->
+
+<input type="text" (keyup)= "eventCatcherFour($event)">
+<p>{{inputDataFromFour}}</p>
+
+
+<input type="text" [(ngModel)] = "inputDataFromFive">
+<p>{{inputDataFromFive}}</p>
+

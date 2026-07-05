@@ -1,0 +1,14 @@
+<p>This is a like componet</p>
+
+<!-- 
+<i class="fa" [ngClass]= "{
+    'fa-thumbs-o-up': !isLiked,
+    'fa-thumbs-up': isLiked
+}" aria-hidden="true" (click) = "triggerLikeOrNotLike()"></i>
+-->
+
+
+<i class="fa" [ngClass]= "{
+    'fa-thumbs-o-up': !like,
+    'fa-thumbs-up': like
+}" aria-hidden="true" (click) = "sendTriggerToParent()"></i>

@@ -1,0 +1,70 @@
+<p [innerHTML] = "fName"></p>
+<H6 [textContent]= "lName" ></H6>
+<h1 [innerText]= "fName"></h1>
+<img [src]= "imgSrc" alt="" style="width: 10vw ;">
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+<tbody>
+  <td [colSpan]= " combineOfCols"></td>
+</tbody>
+
+
+<!-- string interpulation -->
+<hr>
+<P>{{fName}}</P>
+<P>{{lName}}</P>
+<h6>{{4+6}}</h6>
+<h1>{{fName + " "  + lName}}</h1>
+<hr>
+
+<p [innerHTML] = " getFullName()"></p>
+<h6> {{isindian ? 'i am an indian' : 'i am from somewhere else' }} </h6>
+
+<p> {{isindian ? 'i am an indian' : 'i am from somewhere else' }} </p>
+
+<!-- ///Date 29/10/2022 -->
+
+<!-- DIRECTIVE -->
+
+<!-- STRUCTURAL DIRECTIVE -->
+
+<ul>
+  <li *ngFor = "let std of stdArr; let i = index" >{{i+1}}:{{std}}</li>
+</ul>
+<button *ngIf="showBtn" >Submit</button>
+ <p *ngIf = "stdArr.length !== 0; " >There are several students in the call</p>
+
+ <ng-template #elsePart>
+ <p>There are no student have joined call yet</p>
+</ng-template>
+
+<!-- ATTRIBUITE DIRECTIVE -->
+<P [ngStyle] = "{backgroundColor : ShowRed ? 'red' : 'blue'}">Hello World</P>
+<P [ngStyle] = "{'background-color' : 'green', color : '#fff'}">Hello World</P>
+
+<p [ngClass]="{'strick-through':'isStrikeThrough'}">Hey There...</p>
+<!-- 
+CUSTOM DIRETIVE -->
+ <input type="text" inputFormat >
+ <hr>
+ <input type="text" phonesFormat>
+
+ <!-- PIPE -->
+ <P>{{graphicCard.name | uppercase}}</P>
+ <P>{{graphicCard.dissVersion | number}}</P>
+ <P>{{graphicCard.boostClock | number : "5.3-5" }}</P>
+ <P>{{graphicCard.unitsSold | number}}</P>
+ <P>{{graphicCard.price | currency: "INR"}}</P>
+ <P>{{graphicCard.releaseDate |date:"medium"}}</P>
+ 
+
+ <!-- CUSTOM-PIPE  -->
+
+<P>{{graphicCard.description | summayPipe : 50 }}</P>
+

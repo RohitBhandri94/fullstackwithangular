@@ -1,0 +1,74 @@
+<!-- // property binding -->
+
+<h2>This is child-two</h2>
+<p [innerHTML]="fName"></p>
+<p [textContent]="lName"></p>
+<p [innerText]="age"></p>
+<img [src]="imgScra" alt="" >
+
+<table>
+    <thead>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th [attr.colspan]="combineNoOfCols">2</th>
+            <th>4</th>
+        </tr>
+    </tbody>
+</table>
+
+<p [innerText]=" getFullName()"></p>
+
+
+<!-- // string interpolation -->
+<p>{{fName}}</p>
+<p>{{lName}}</p>
+<p>{{2+4}}</p>
+<p>{{fName + ' '+ lName}}</p>
+
+<p>{{isIndian? 'I am an Indian':'I am from somewhere else'}}</p>
+<!-- 
+structural directive -->
+
+<ul>
+    <li *ngFor="let std of stdArr; let i= index">{{i+1}} : {{std}}</li>
+</ul>
+<h1 (click)="clickedMe()">Hide button click Here</h1>
+<button *ngIf="showBtn" >Submit Me</button>
+
+<p *ngIf="stdArr.length !==0 else elsePart">There are several people on call</p>
+<ng-template #elsePart>No people on call</ng-template>
+
+<!-- Attribute directive -->
+
+<p [ngStyle] ="{ backgroundColor : 'red'}">Hello Word!</p>
+<p [ngStyle] ="{ 'background-color' : 'green'}">Hello Word!</p>
+
+<p [ngClass]= "{'strike-through':true}">Hey There..</p>
+
+
+<!-- custom dierctive -->
+
+<input type="text" inputFormat>
+<hr>
+<!-- 
+Event binding -->
+<input type="text" (keyup)="eventCacherOne(inputOne)"  #inputOne>
+<hr>
+
+<input type="text" (keyup)="eventCacherTwo($event)"  >
+<hr>
+<input type="text" (keyup.enter)="eventCacherThree($event)"  >
+<hr>
+<button (click)="btnClicke()">Click me</button>
+<hr>
+
+<input type="text" (keyup)="eventCacherFour($event)"  >
+<p>{{fourEvent}}</p>
+
+<input type="text"  [(ngModel)]= "eventCacherFive"  >
+<p>{{eventCacherFive}}</p>
